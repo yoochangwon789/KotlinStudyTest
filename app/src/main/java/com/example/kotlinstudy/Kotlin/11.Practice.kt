@@ -42,7 +42,7 @@ fun main(args: Array<String>) {
     // when 다양한 조건식 2
     val value5: Int = 70
 
-    // in 은 범위 설정할때 60..70 은 60 부터 70
+    // in 은 범위 설정할때 60..70 은 60 부터 70 처음과 마지막 숫자를 포함
     when (value5) {
         in 60..70 -> {
             println("value5 is 60..70")
