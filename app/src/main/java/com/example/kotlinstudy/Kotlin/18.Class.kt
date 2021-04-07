@@ -62,7 +62,7 @@ class Car1(var engine: String, var body: String) {
     }
 }
 
-// 클래스(설명서) 만드는 방법 4 -> 2번 방법의 확장
+// 클래스(설명서) 만드는 방법 4 -> 2번 방법의 확장 생성자 오버로딩
 class Car2 {
     var engine: String = ""
     var body: String = ""
