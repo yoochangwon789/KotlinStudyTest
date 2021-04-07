@@ -32,11 +32,11 @@ fun main(array: Array<String>) {
 
     var superCar: SuperCar = SuperCar("good engine", "big", "white")
 
-    println()
-    println()
-    println()
-    println()
-
+    // 인스턴스가 가지고있는 기능을 사용하는 방법
+    val runableCar: RunableCar = RunableCar("simple engine", "short body")
+    runableCar.ride()
+    runableCar.navi("부산")
+    runableCar.drive()
 }
 
 // 클래스(설명서) 만드는 방법 1
@@ -85,4 +85,17 @@ class Car2 {
     }
 }
 
-// Test github
+class RunableCar(engine: String, body: String) {
+
+    fun ride() {
+        println("탑승 하였습니다.")
+    }
+
+    fun drive() {
+        println("달립니다!")
+    }
+
+    fun navi(destication: String) {
+        println("$destication 으로 목적지가 설정되었습니다.")
+    }
+}
