@@ -32,6 +32,10 @@ fun main(array: Array<String>) {
 
     var superCar: SuperCar = SuperCar("good engine", "big", "white")
 
+    println()
+    println()
+    println()
+
 }
 
 // 클래스(설명서) 만드는 방법 1
