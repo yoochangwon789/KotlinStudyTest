@@ -37,6 +37,18 @@ fun main(array: Array<String>) {
     runableCar.ride()
     runableCar.navi("부산")
     runableCar.drive()
+
+    // 인스턴스 멤버변수의 접근하는 방법
+    val runableCar2: RunableCar2 = RunableCar2("simple engine2", "short body2")
+    println(runableCar2.engine)
+    println(runableCar2.body)
+
+    println()
+
+    val testClass = TestClass()
+    testClass.test(1)
+    testClass.test(1, 2)
+
 }
 
 // 클래스(설명서) 만드는 방법 1
@@ -97,5 +109,46 @@ class RunableCar(engine: String, body: String) {
 
     fun navi(destication: String) {
         println("$destication 으로 목적지가 설정되었습니다.")
+    }
+}
+
+class RunableCar2 {
+    var engine: String = ""
+    var body: String = ""
+
+    constructor(engine: String, body: String) {
+        this.engine = engine
+        this.body = body
+    }
+
+    // init 을 사용하면 객체가 인스턴스화 될 때 init 부분이 <가장 먼저> 출력 된다
+    init {
+        // 초기셋팅을 할 때 유용하다
+        println("RunableCar2가 만들어 졌습니다.")
+    }
+
+    fun ride() {
+        println("탑승 하였습니다.")
+    }
+
+    fun drive() {
+        println("달립니다!")
+    }
+
+    fun navi(destication: String) {
+        println("$destication 으로 목적지가 설정되었습니다.")
+    }
+}
+
+// 오버로딩
+class TestClass() {
+
+    fun test(a: Int) {
+        println("up")
+    }
+
+    fun test(a: Int, b: Int) {
+        println("down")
+
     }
 }
