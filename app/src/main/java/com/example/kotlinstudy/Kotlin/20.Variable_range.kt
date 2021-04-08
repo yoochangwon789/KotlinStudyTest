@@ -28,5 +28,4 @@ class Test(var name: String) {
         name = "홍길동"
         number100 = 100
     }
-
 }
