@@ -7,6 +7,11 @@ fun main(array: Array<String>) {
     println(calculator2.minus(10, 1, 2, 3))
     println(calculator2.multiply(1, 2, 3))
     println(calculator2.divide(10, 2, 3))
+
+    // 반환값이 객체이면 반환값의 객체의 기능을 이어갈 수 있다
+    // Chaining(체이닝)
+    val calculator3 = Calculator3(3)
+    println(calculator3.plus(5).minus(5).initialValue)
 }
 
 class Calculator2() {
@@ -46,5 +51,28 @@ class Calculator2() {
             }
         }
         return result
+    }
+}
+
+class Calculator3(val initialValue: Int) {
+
+    fun plus(number: Int): Calculator3 {
+        val result = this.initialValue + number
+        return Calculator3(result)
+    }
+
+    fun minus(number: Int): Calculator3 {
+        val result = this.initialValue - number
+        return Calculator3(result)
+    }
+
+    fun multiply(number: Int): Calculator3 {
+        val result = this.initialValue * number
+        return Calculator3(result)
+    }
+
+    fun divide(number: Int): Calculator3 {
+        val result = this.initialValue / number
+        return Calculator3(result)
     }
 }
