@@ -36,7 +36,7 @@ class TV(val channels: List<String>) {
         // field 를 리턴해주고 만약 값을 + 1 이런식으로 더해주면 그 값은 +1 이 된상태로 호출이된다
         get() {
             println("호출되었습니다.")
-            return field -
+            return field
         }
     // 값의 할당
     // a = b  -> b 를 a 에 할당한다
