@@ -14,7 +14,7 @@ fun main(array: Array<String>) {
 
     println()
 
-    val accountTest: AccountTest = AccountTest("유창원", "961001")
+    val accountTest: AccountTest = AccountTest("유창원", "961001", 1000000)
 
     accountTest.remainingBalance()
     accountTest.withdraw(100000)
@@ -51,24 +51,23 @@ class Calculator(var number1: Int, var number2: Int) {
     }
 }
 
-class AccountTest(var name: String, var birthday: String) {
-    var result: Int = 1000000
+class AccountTest(var name: String, var birthday: String, var firstMoney: Int) {
 
     fun remainingBalance() {
-        println("$name 님의 남은 잔고 : $result")
+        println("$name 님의 남은 잔고 : ${this.firstMoney}")
         println()
     }
 
     fun withdraw(money: Int) {
         println("출금 : $money")
-        this.result = result - money
-        println("$name 님의 남은 잔고 : $result")
+        this.firstMoney = firstMoney - money
+        println("$name 님의 남은 잔고 : $firstMoney")
     }
 
     fun deposit(money: Int) {
         println("예금 : $money")
-        this.result = result + money
-        println("$name 님의 남은 잔고 : ${result + money}")
+        this.firstMoney = this.firstMoney + money
+        println("$name 님의 남은 잔고 : ${firstMoney + money}")
     }
 
 }
