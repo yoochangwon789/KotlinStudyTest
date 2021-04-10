@@ -5,12 +5,12 @@ fun main(args: Array<String>) {
     val monster = SuperMonster(100, 10)
     val night = SuperNight(130, 8)
 
-    monster.attack(night)
+    monster.attack(night, 10)
 }
 
 open class Charator(var hp: Int, val power: Int) {
 
-    fun attack(charator: Charator) {
+    fun attack(charator: Charator, power: Int) {
         charator.defense(power)
     }
 
