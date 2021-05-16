@@ -20,16 +20,11 @@ class Lotto() {
 
         var zeroCheckArray = mutableListOf<Int>()
 
-        var sotredWinNums = win_nums.sorted()
-
         for (i in lottos.indices)  {
             if (lottos[i] != 0){
                 zeroCheckArray.add(lottos[i])
             } else zeroCount++
         }
-
-        println(zeroCheckArray)
-        println(zeroCount)
 
         if (zeroCheckArray.size > 0) {
             for (i in zeroCheckArray.indices) {
@@ -38,8 +33,6 @@ class Lotto() {
                 }
             }
         }
-
-        println(lottosCheck)
 
         // 최고순위
         if (zeroCount >= 0) {
