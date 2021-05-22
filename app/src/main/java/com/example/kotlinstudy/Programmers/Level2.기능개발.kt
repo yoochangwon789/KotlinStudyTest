@@ -1,5 +1,7 @@
 package com.example.kotlinstudy.Programmers
 
+import java.util.*
+
 fun main(array: Array<String>) {
 
     val aArray = intArrayOf(93, 30, 55)
@@ -12,6 +14,9 @@ fun main(array: Array<String>) {
 class FunctionDevelopment() {
     fun solution(progresses: IntArray, speeds: IntArray): MutableList<Int> {
         var answer = mutableListOf<Int>()
+
+        var stack = Stack<Int>()
+
         var top: Int = 1
         var check: Int = 0
 
@@ -20,15 +25,18 @@ class FunctionDevelopment() {
         for (i in progresses.indices) {
             if ((100 - progresses[i]) % speeds[i] >= 1) {
                 check = (100 - progresses[i]) / speeds[i] + 1
-                checkArray.add(check)
+                stack.push(check)
             } else {
                 check = (100 - progresses[i]) / speeds[i]
-                checkArray.add(check)
+                stack.push(check)
             }
             check = 0
         }
 
         // 7, 3, 9
+        println(stack)
+
+        
 
         return answer
     }
