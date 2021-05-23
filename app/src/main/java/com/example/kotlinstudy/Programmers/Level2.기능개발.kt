@@ -16,13 +16,9 @@ class FunctionDevelopment() {
         var answer = mutableListOf<Int>()
 
         var stack = Stack<Int>()
-
-        var top: Int = 1
         var check: Int = 0
 
-        val checkArray = mutableListOf<Int>()
-
-        for (i in progresses.indices) {
+        for (i in progresses.size - 1 downTo (0)) {
             if ((100 - progresses[i]) % speeds[i] >= 1) {
                 check = (100 - progresses[i]) / speeds[i] + 1
                 stack.push(check)
@@ -35,8 +31,19 @@ class FunctionDevelopment() {
 
         // 7, 3, 9
         println(stack)
+        println(stack.pop())
+        println(stack.peek())
 
-        
+        while (!stack.isEmpty()) {
+            var cnt: Int = 1
+            val top = stack.pop()
+
+            while (!stack.isEmpty() && stack.peek() <= top) {
+                cnt++
+                stack.pop()
+            }
+            answer.add(cnt)
+        }
 
         return answer
     }
